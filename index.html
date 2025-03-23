@@ -25,7 +25,7 @@ body {
     position: relative;
     display: inline-block;
     width: 100%;
-    max-width: 350px;
+    max-width: 350px; /* Mobil cihazlarda da düzgün görünsün diye genişliği sınırladık */
     padding: 20px;
 }
 img {
@@ -35,14 +35,14 @@ img {
 }
 h2 {
     margin-bottom: 20px;
-    font-size: 1.5rem;
+    font-size: 1.5rem; /* Mobil uyumlu font boyutu */
 }
 .buttons {
     display: flex;
     justify-content: center;
     gap: 20px;
     position: relative;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Butonlar mobilde alt alta gelebilir */
 }
 button {
     padding: 10px 20px;
@@ -62,11 +62,11 @@ button {
 }
 @media (max-width: 480px) {
     h2 {
-        font-size: 1.2rem;
+        font-size: 1.2rem; /* Mobilde başlık boyutunu küçülttük */
     }
     button {
-        padding: 8px 16px;
-        font-size: 14px;
+        padding: 8px 16px; /* Mobilde butonları küçülttük */
+        font-size: 14px; /* Mobilde font boyutunu küçülttük */
     }
 }
 </style>
@@ -76,7 +76,7 @@ button {
     <img src="https://i.pinimg.com/736x/f9/37/36/f93736b270bd3be93aa09995efeb1cf1.jpg" alt="kedi">
     <h2>Uyucak mısın?</h2>
     <div class="buttons">
-        <button id="evet" onclick="evetTiklandi()">Evet</button>
+        <button id="evet">Evet</button>
         <button id="hayir" onmouseover="kac()">Hayır</button>
     </div>
 </div>
@@ -94,10 +94,6 @@ function kac() {
     hayir.style.position = 'absolute';
     hayir.style.left = x + "px";
     hayir.style.top = y + "px";
-}
-
-function evetTiklandi() {
-    alert("İyi Geceler!"); // Evet butonuna tıklayınca "İyi Geceler!" mesajını göster
 }
 </script>
 
