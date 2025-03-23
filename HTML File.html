@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uyucak mısın</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    overflow: hidden;
+}
+.container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 350px;
+    padding: 20px;
+}
+img {
+    width: 100%;
+    max-width: 200px;
+    margin-bottom: 20px;
+}
+h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: relative;
+    flex-wrap: wrap;
+}
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+#evet {
+    background-color: green;
+    color: white;
+}
+#hayir {
+    background-color: red;
+    color: white;
+    transition: all 0.05s ease-in-out;
+}
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.2rem;
+    }
+    button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <img src="https://i.pinimg.com/736x/f9/37/36/f93736b270bd3be93aa09995efeb1cf1.jpg" alt="kedi">
+    <h2>Uyucak mısın?</h2>
+    <div class="buttons">
+        <button id="evet" onclick="evetTiklandi()">Evet</button>
+        <button id="hayir" onmouseover="kac()">Hayır</button>
+    </div>
+</div>
+
+<script>
+function kac() {
+    let hayir = document.getElementById("hayir");
+    let container = document.querySelector('.container');
+    let maxX = container.offsetWidth - hayir.offsetWidth - 40;
+    let maxY = container.offsetHeight - hayir.offsetHeight - 40;
+
+    let x = Math.random() * maxX;
+    let y = Math.random() * maxY;
+
+    hayir.style.position = 'absolute';
+    hayir.style.left = x + "px";
+    hayir.style.top = y + "px";
+}
+
+function evetTiklandi() {
+    alert("İyi Geceler!"); // Evet butonuna tıklayınca "İyi Geceler!" mesajını göster
+}
+</script>
+
+</body>
+</html>
